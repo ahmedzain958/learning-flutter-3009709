@@ -15,7 +15,12 @@ class LoginPage extends StatelessWidget {
         },
       ),
       //TODO: Add the text and image from the design
-      body: Text('Hello!'),
+      body: Text(
+        'Hello!',
+        style: TextStyle(
+            fontSize: 100, color: Colors.blue, fontWeight: FontWeight.bold,
+        letterSpacing: 0.5),
+      ),
     );
   }
 }

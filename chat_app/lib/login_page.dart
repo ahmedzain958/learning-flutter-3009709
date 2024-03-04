@@ -43,9 +43,22 @@ class LoginPage extends StatelessWidget {
           Container(
             height: 150,
             width: 150,
-            color: Colors.blue,
             child: FlutterLogo(),
-            padding: EdgeInsets.all(50),
+            padding: EdgeInsets.all(
+                50) /*more padding for the confined Flutter logo contained inside the container and the whole container is in blue*/,
+            margin: EdgeInsets.all(50) /*margins around the container itself*/,
+            decoration: BoxDecoration(
+                color: Colors.blue,
+                /*(2-sol)gives error here Cannot provide both a color and a decoration
+To provide both, use "decoration: BoxDecoration(color: color)".
+'package:flutter/src/widgets/container.dart':
+Failed assertion: line 269 pos 15: 'color == null || decoration == null'*/
+                borderRadius: BorderRadius.circular(24),
+                image: DecorationImage(
+                    fit: BoxFit.fitWidth,
+                    image: NetworkImage(
+                        'https://3009709.youcanlearnit.net/Alien_LIL_131338.png') /*if left NetworkImage and container had child: FlutterLogo(),FlutterLogo will be overriden by the Network image */
+                    )),
           )
         ],
       ),

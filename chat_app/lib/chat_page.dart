@@ -14,6 +14,8 @@ class ChatPage extends StatelessWidget {
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
       ),
       body: Container(
+        child: Text('Hi this is'),
+        margin: EdgeInsets.all(50),
         decoration: BoxDecoration(
           color: Colors.indigo,
           borderRadius: BorderRadius.only(

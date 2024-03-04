@@ -11,6 +11,12 @@ class ChatPage extends StatelessWidget {
         title: Text('Hi Pooja'),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
       ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.indigo,
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(12))
+        ),
+      ),
     );
   }
 }

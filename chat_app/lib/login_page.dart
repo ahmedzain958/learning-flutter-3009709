@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
             fontWeight: FontWeight.bold,
             letterSpacing: 0.5),
       ),*/
-      body: Row(
+      body: Column(
         children: [
           Text(
             'Welcome back! \nYou\'ve been missed',
@@ -41,6 +41,7 @@ class LoginPage extends StatelessWidget {
               color: Colors.blueGrey,
             ),
           ),
+          Image.network(src)
         ],
       ),
     );

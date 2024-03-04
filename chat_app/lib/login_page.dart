@@ -7,7 +7,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.cyan,),
       drawer: Drawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -15,11 +15,33 @@ class LoginPage extends StatelessWidget {
         },
       ),
       //TODO: Add the text and image from the design
-      body: Text(
-        'Hello!',
+      /* body: Text(
+        'Let\'s sign you in!',
         style: TextStyle(
-            fontSize: 100, color: Colors.blue, fontWeight: FontWeight.bold,
-        letterSpacing: 0.5),
+            fontSize: 30,
+            color: Colors.blue,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 0.5),
+      ),*/
+      body: Row(
+        children: [
+          Text(
+            'Welcome back! \nYou\'ve been missed',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.blueGrey,
+            ),
+          ),
+          Text(
+            'Welcome back! \nYou\'ve been missed',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.blueGrey,
+            ),
+          ),
+        ],
       ),
     );
   }

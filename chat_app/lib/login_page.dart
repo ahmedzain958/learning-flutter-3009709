@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
                 color: Colors.blueGrey),
           ),
           Image.network(
-            'https://3009709.youcanlearnit.net/Alien_LIL_131338.png',
+            'https://fastly.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI',
             height: 200,
           ),
           Container(
@@ -44,7 +44,7 @@ class LoginPage extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.fitHeight,
                   image: NetworkImage(
-                      'https://3009709.youcanlearnit.net/Alien_LIL_131338.png'),
+                      'https://fastly.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI'),
                 ),
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(24)),

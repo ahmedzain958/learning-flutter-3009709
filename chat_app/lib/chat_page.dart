@@ -9,7 +9,6 @@ class ChatPage extends StatelessWidget {
             .transparent /*mistake has been here of not showing app bar with color until I discovered
          that flutter removed the elevation, at this point in video she elevates by 0 to make it transparent*/
         ,
-        elevation: 0 /*no need for this now*/,
         title: const Text('Hi Pooja'),
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.logout))],
       ),
@@ -93,7 +92,31 @@ class ChatPage extends StatelessWidget {
               ],
             ),
           ),
-        ]/*A RenderFlex overflowed by 185 pixels on the bottom. we need a scrollable view accommodates the children*/,
+          Container(
+            height: 100,
+            decoration: const BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.send,
+                    color: Colors.white,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

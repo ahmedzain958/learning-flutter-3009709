@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class ChatBubble extends StatelessWidget {
   final String message;
   final Alignment alignment;
+  const ChatBubble({key, required this.message,required this.alignment});
 
-  const ChatBubble({Key? key, required this.message,required this.alignment})
 
   @override
   Widget build(BuildContext context) {

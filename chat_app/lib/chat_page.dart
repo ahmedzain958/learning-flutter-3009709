@@ -1,4 +1,5 @@
 import 'package:chat_app/widgets/chat_bubble.dart';
+import 'package:chat_app/widgets/chat_input.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -33,31 +34,7 @@ class ChatPage extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.send,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
-            ),
-            decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-          )
+          ChatInput()
         ],
       ),
     );

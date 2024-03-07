@@ -5,6 +5,35 @@ import 'package:flutter/widgets.dart';
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
 
+  Widget getChatBubble(alignment, message) {
+    return Align(
+      alignment: alignment,
+      child: Container(
+        padding: EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              '$message',
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+            Image.network(
+              'https://3009709.youcanlearnit.net/Alien_LIL_131338.png',
+              height: 200,
+            )
+          ],
+        ),
+        margin: EdgeInsets.all(50),
+        decoration: BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+                bottomLeft: Radius.circular(12))),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,88 +51,12 @@ class ChatPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded/*I think expanded takes the remaining space of the already reserved height*/(
+          Expanded /*I think expanded takes the remaining space of the already reserved height*/ (
             child: ListView(
               children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    padding: EdgeInsets.all(24),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Hi, this is your message!',
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
-                        Image.network(
-                          'https://3009709.youcanlearnit.net/Alien_LIL_131338.png',
-                          height: 200,
-                        )
-                      ],
-                    ),
-                    margin: EdgeInsets.all(50),
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            topRight: Radius.circular(12),
-                            bottomLeft: Radius.circular(12))),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment
-                      .centerRight /* aligns containers(chat bubbles) to left / right and makes it wrap content not match parent as it was*/,
-                  child: Container(
-                    padding: EdgeInsets.all(24),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Hi, this is your message!',
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
-                        Image.network(
-                          'https://3009709.youcanlearnit.net/Alien_LIL_131338.png',
-                          height: 200,
-                        )
-                      ],
-                    ),
-                    margin: EdgeInsets.all(50),
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            topRight: Radius.circular(12),
-                            bottomLeft: Radius.circular(12))),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    padding: EdgeInsets.all(24),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Hi, this is your message!',
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
-                        Image.network(
-                          'https://3009709.youcanlearnit.net/Alien_LIL_131338.png',
-                          height: 200,
-                        )
-                      ],
-                    ),
-                    margin: EdgeInsets.all(50),
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            topRight: Radius.circular(12),
-                            bottomLeft: Radius.circular(12))),
-                  ),
-                ),
+                getChatBubble(Alignment.centerLeft, "Hi"),
+                getChatBubble(Alignment.centerRight, "Hi"),
+                getChatBubble(Alignment.centerLeft, "Hi"),
                 //TODO: Align both icons to the cornermost edge of the device width.
               ],
             ),
@@ -131,8 +84,7 @@ class ChatPage extends StatelessWidget {
             ),
             decoration: BoxDecoration(
                 color: Colors.black,
-                borderRadius:
-                    BorderRadius.vertical(top: Radius.circular(20))),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
           )
         ],
       ),

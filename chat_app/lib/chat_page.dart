@@ -7,7 +7,6 @@ import 'package:flutter/widgets.dart';
 class ChatPage extends StatelessWidget {
   const ChatPage({Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,13 +25,15 @@ class ChatPage extends StatelessWidget {
       body: Column(
         children: [
           Expanded /*I think expanded takes the remaining space of the already reserved height*/ (
-            child: ListView(
-              children: [
-                ChatBubble(alignment: Alignment.centerLeft,message:  "Hi, this is Ahmed Zain"),
-                ChatBubble(alignment: Alignment.centerRight,message:  "Hi, Zain"),
-                ChatBubble(alignment: Alignment.centerLeft,message:  "Hi, this is Ahmed Zain"),
-              ],
-            ),
+            child: ListView.builder(
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return ChatBubble(
+                      alignment: index % 2 == 0
+                          ? Alignment.centerLeft
+                          : Alignment.centerRight,
+                      message: "Hi, this is Ahmed Zain");
+                }),
           ),
           ChatInput()
         ],
